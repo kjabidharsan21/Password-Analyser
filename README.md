@@ -1,34 +1,44 @@
-# 🔐 Password Strength Analyzer
+# Password Strength Analyzer
 
-Password Strength Analyzer is a simple web application that helps users understand how secure their passwords are. The application checks a password based on its length, use of uppercase and lowercase letters, numbers, special characters, repeated characters, and common password patterns.
+A Flask-based software project that evaluates password strength, provides improvement suggestions, generates strong passwords, and optionally checks password reuse using password hashes.
 
-It gives the user a clear strength level and explains what can be improved. The project also includes a password generator that creates strong random passwords.
+## Features
 
-An additional password history feature is included using SQLite to check whether a password has been used before. Instead of storing the actual password, the system stores a hashed version for the history check.
+- Password length analysis
+- Uppercase/lowercase analysis
+- Number and special-character checks
+- Common-password detection
+- Repeated-character detection
+- Sequential-pattern detection
+- Strength classification
+- Suggestions for improving passwords
+- Secure random password generator
+- SQLite password-history module
+- Password history stores SHA-256 hashes rather than plaintext passwords
 
-### Features
+## Run
 
-* Password strength analysis
-* Strength score and classification
-* Checks password length and complexity
-* Detects common and predictable passwords
-* Detects repeated characters and sequences
-* Provides suggestions to improve weak passwords
-* Generates strong random passwords
-* Checks password reuse
-* Stores password history using hashes
-* Simple and responsive web interface
+1. Open this folder in VS Code.
+2. Create a virtual environment:
 
-### Technologies Used
+   python -m venv venv
 
-**Python | Flask | HTML | CSS | JavaScript | SQLite**
+3. Activate it on Windows:
 
-### What I Learned
+   venv\Scripts\activate
 
-Through this project, I gained practical experience in building a web application with Flask, working with databases, handling user input, applying password security concepts, and creating an interactive frontend.
+4. Install dependencies:
 
-### Future Improvements
+   pip install -r requirements.txt
 
-The project can be extended with advanced password pattern detection, entropy analysis, larger common-password datasets, and stronger password-hashing methods such as Argon2id or bcrypt.
+5. Start the application:
 
-**Project Type:** Web Application / Cybersecurity Project
+   python app.py
+
+6. Open:
+
+   http://127.0.0.1:5000
+
+## Note
+
+For a production authentication system, use a dedicated password-hashing algorithm such as Argon2id, bcrypt, or scrypt with appropriate parameters rather than SHA-256 alone.
